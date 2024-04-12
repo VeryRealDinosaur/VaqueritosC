@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Vaqueritos/Game.axaml" value="Vaqueritos/Vaqueritos.csproj" />
+        <entry key="Vaqueritos/MainMenu.axaml" value="Vaqueritos/Vaqueritos.csproj" />
+        <entry key="Vaqueritos/MainWindow.axaml" value="Vaqueritos/Vaqueritos.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
