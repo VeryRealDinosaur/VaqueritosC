@@ -3,9 +3,11 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="Vaqueritos/App.axaml" value="Vaqueritos/Vaqueritos.csproj" />
         <entry key="Vaqueritos/Game.axaml" value="Vaqueritos/Vaqueritos.csproj" />
         <entry key="Vaqueritos/MainMenu.axaml" value="Vaqueritos/Vaqueritos.csproj" />
         <entry key="Vaqueritos/MainWindow.axaml" value="Vaqueritos/Vaqueritos.csproj" />
+        <entry key="Vaqueritos/Training.axaml" value="Vaqueritos/Vaqueritos.csproj" />
       </map>
     </option>
   </component>

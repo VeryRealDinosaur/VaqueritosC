@@ -35,12 +35,21 @@
       <None Remove="Assets\MainCharacter.png" />
       <AvaloniaResource Include="Assets\MainCharacter.png" />
       <None Remove="Assets\bala-1anim.gif" />
-      <AvaloniaResource Include="Assets\bala-1anim.gif" />
       <None Remove="Assets\ezgif-7-6ca521465c.gif" />
-      <AvaloniaResource Include="Assets\ezgif-7-6ca521465c.gif" />
       <None Remove="Assets\bala_gif.gif" />
-      <AvaloniaResource Include="Assets\bala_gif.gif" />
       <None Remove="Assets\BalaFInal.gif" />
       <AvaloniaResource Include="Assets\BalaFInal.gif" />
+      <None Remove="Assets\Fonts\Pixel-Western.ttf" />
+      <AvaloniaResource Include="Assets\Fonts\Pixel-Western.ttf" />
+      <None Remove="Assets\image_fx_pixelart_pole_with_4_signs_wild_west_backgro.jpg" />
+      <AvaloniaResource Include="Assets\image_fx_pixelart_pole_with_4_signs_wild_west_backgro.jpg" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Compile Update="Training.axaml.cs">
+        <DependentUpon>Training.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
     </ItemGroup>
 </Project>

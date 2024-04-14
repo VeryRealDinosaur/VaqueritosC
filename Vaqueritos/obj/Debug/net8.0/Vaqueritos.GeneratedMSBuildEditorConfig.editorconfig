@@ -25,3 +25,6 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/Users/jovanyrobledo/Documents/Project/Vaqueritos/Vaqueritos/MainMenu.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/jovanyrobledo/Documents/Project/Vaqueritos/Vaqueritos/Training.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

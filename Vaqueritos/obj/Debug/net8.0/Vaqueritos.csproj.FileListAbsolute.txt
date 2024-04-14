@@ -130,3 +130,4 @@
 /Users/jovanyrobledo/Documents/Project/Vaqueritos/Vaqueritos/obj/Debug/net8.0/Vaqueritos.genruntimeconfig.cache
 /Users/jovanyrobledo/Documents/Project/Vaqueritos/Vaqueritos/obj/Debug/net8.0/ref/Vaqueritos.dll
 /Users/jovanyrobledo/Documents/Project/Vaqueritos/Vaqueritos/bin/Debug/net8.0/AvaloniaGif.dll
+/Users/jovanyrobledo/Documents/Project/Vaqueritos/Vaqueritos/obj/Debug/net8.0/Vaqueritos.sourcelink.json

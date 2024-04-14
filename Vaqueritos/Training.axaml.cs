@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
@@ -13,11 +14,11 @@ using Avalonia.Media;
 
 namespace Vaqueritos
 {
-    public partial class Game : Window
+    public partial class Training : Window
     {
         double[][][] randomModel = MainMenu.RandomModelSingleton.Instance.GetRandomModel();
         
-        public Game()
+        public Training()
         {
             InitializeComponent();
         }
@@ -26,9 +27,15 @@ namespace Vaqueritos
         {
             AvaloniaXamlLoader.Load(this);
             Recargar = this.FindControl<Button>("Recargar");
+            Escudo = this.FindControl<Button>("Escudo");
+            Disparar = this.FindControl<Button>("Disparar");
             Bala = this.FindControl<GifImage>("Bala");
             balas = this.FindControl<Label>("balas");
         }
+        
+        
+        
+        
         
         static int MakeRandomSelection(double[][][] randomModel, int turn)
         {
@@ -49,11 +56,38 @@ namespace Vaqueritos
 
             return -1;
         }
+        
+        public void UpdateRandomModel(double[][][] randomModel, int newAction, int turn)
+        {
+            // Adjust for 0-based index
+            newAction -= 1;
 
-        int debugAction;
+            // Update the count for the new action at the given turn
+            for (int action = 0; action < 3; action++)
+            {
+                if (action == newAction)
+                {
+                    // Increment the count for the new action
+                    randomModel[turn][action][newAction]++;
+                }
+            }
+
+            // Normalize the probabilities for the turn
+            double totalActionsThisTurn = 0;
+            for (int action = 0; action < 3; action++)
+            {
+                totalActionsThisTurn += randomModel[turn][action][newAction];
+            }
+
+            for (int action = 0; action < 3; action++)
+            {
+                randomModel[turn][action][newAction] /= totalActionsThisTurn;
+            }
+        }
+
+        private int debugAction;
         int turn;
-        int Reponse;
-
+        
         int playerMunition = 0;
         int botMunition = 0;
 
@@ -72,6 +106,7 @@ namespace Vaqueritos
         bool hasPlayerWon;
         bool hasBotWon;
 
+        
         void BalaAnimation()
         {
             Timer timer = new Timer();
@@ -105,6 +140,7 @@ namespace Vaqueritos
                             playerProtected = false;
                             BalaAnimation();
                             playerMunition++;
+                            UpdateRandomModel(randomModel,1,turn);
                             balas.Content = $"{playerMunition}";
                             canPlayerRecharge = false;
                             return true;
@@ -118,6 +154,7 @@ namespace Vaqueritos
 
                     case 2: // Escudo
                         playerProtected = true;
+                        UpdateRandomModel(randomModel,2,turn);
                         return true;
                         break;
 
@@ -127,6 +164,7 @@ namespace Vaqueritos
                         {
                             playerProtected = false;
                             hasPlayerShot = true;
+                            UpdateRandomModel(randomModel,3,turn);
                             playerMunition--;
                             balas.Content = $"{playerMunition}";
                             return true;

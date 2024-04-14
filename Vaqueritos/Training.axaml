@@ -3,7 +3,7 @@
         xmlns:avaloniaGif="clr-namespace:AvaloniaGif;assembly=AvaloniaGif"
         Width="500"
         Height="500"
-        x:Class="Vaqueritos.Game"
+        x:Class="Vaqueritos.Training"
         Title="Game">
     
     <Grid>
