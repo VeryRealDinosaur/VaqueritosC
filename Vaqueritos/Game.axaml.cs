@@ -26,6 +26,8 @@ namespace Vaqueritos
         {
             AvaloniaXamlLoader.Load(this);
             Recargar = this.FindControl<Button>("Recargar");
+            Escudo = this.FindControl<Button>("Escudo");
+            Disparar = this.FindControl<Button>("Disparar");
             Bala = this.FindControl<GifImage>("Bala");
             balas = this.FindControl<Label>("balas");
         }
