@@ -13,7 +13,7 @@
                               SourceUri="{Binding Source=avares://Vaqueritos/Assets/Final malo.gif, Mode=OneWay}"/>
 
         <avaloniaGif:GifImage Grid.Row="1" x:Name="Win" HorizontalAlignment="Center" VerticalAlignment="Center" AutoStart="False" ZIndex="1" Opacity="1"
-                              SourceUri="{Binding Source=avares://Vaqueritos/Assets/bola rodante.gif, Mode=OneWay}"/>
+                              SourceUri="{Binding Source=avares://Vaqueritos/Assets/Final bueno.gif, Mode=OneWay}"/>
         
         <avaloniaGif:GifImage Grid.Row="1" x:Name="Bola" HorizontalAlignment="Center" VerticalAlignment="Center" AutoStart="False" ZIndex="3" Opacity="0"
                               SourceUri="{Binding Source=avares://Vaqueritos/Assets/bola rodante.gif, Mode=OneWay}"/>

@@ -392,6 +392,7 @@ namespace Vaqueritos
                 else if (hasPlayerWon)
                 {
                     Barra.Stop();
+                    Win.Start();
                     Win.ZIndex = 5;
                     balas.InvalidateVisual();
                 }
@@ -443,6 +444,7 @@ namespace Vaqueritos
                 else if (hasPlayerWon)
                 {
                     Barra.Stop();
+                    Win.Start();
                     Win.ZIndex = 5;
                     balas.InvalidateVisual();
                 }

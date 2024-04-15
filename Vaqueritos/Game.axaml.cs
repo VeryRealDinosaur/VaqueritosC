@@ -1,11 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using Avalonia.Animation;
-using Avalonia.Animation.Easings;
 using Avalonia.Interactivity;
 using AvaloniaGif;
 using System.Timers;
@@ -17,6 +13,9 @@ namespace Vaqueritos
 {
     public partial class Game : Window
     {
+        
+        
+        
         double[][][] randomModel = MainMenu.RandomModelSingleton.Instance.GetRandomModel();
         
         public Game()
@@ -45,6 +44,9 @@ namespace Vaqueritos
             MiniShoot = this.FindControl<GifImage>("MiniShoot");
 
         }
+
+        
+        
         
         static int MakeRandomSelection(double[][][] randomModel, int turn)
         {
@@ -361,6 +363,7 @@ namespace Vaqueritos
                 else if (hasPlayerWon)
                 {
                     Barra.Stop();
+                    Win.Start();
                     Win.ZIndex = 5;
                     balas.InvalidateVisual();
                 }
@@ -412,6 +415,7 @@ namespace Vaqueritos
                 else if (hasPlayerWon)
                 {
                     Barra.Stop();
+                    Win.Start();
                     Win.ZIndex = 5;
                     balas.InvalidateVisual();
                 }

@@ -17,9 +17,6 @@
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.6"/>
         <PackageReference Include="Avalonia_Gif" Version="1.0.0" />
-        <PackageReference Include="LibVLCSharp" Version="3.8.2" />
-        <PackageReference Include="LibVLCSharp.Avalonia" Version="3.8.2" />
-        <PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.20" />
     </ItemGroup>
 
 
@@ -97,6 +94,8 @@
       <AvaloniaResource Include="Assets\Minibala.gif" />
       <None Remove="Assets\MiniShot.gif" />
       <AvaloniaResource Include="Assets\MiniShot.gif" />
+      <None Remove="Assets\Final bueno.gif" />
+      <AvaloniaResource Include="Assets\Final bueno.gif" />
     </ItemGroup>
 
 

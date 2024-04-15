@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yr3Cd4110+tsGYNjfF4G6sqEFffaKYhQTn4MR4PWCYvopIL0x6EJG9ETrIYF8ceFQIcd+fHo9XcLqLz1XxXkfQ==",
+  "dgSpecHash": "VRENJkmfF0rtqsVpPnOJl0WchIgpccWDarkL3pipUkcNdWx8AzBRJ/w/haKVgf3VNNQttoNc3/asUV+KfyOH5g==",
   "success": true,
   "projectFilePath": "/Users/jovanyrobledo/Documents/Project/Vaqueritos/Vaqueritos/Vaqueritos.csproj",
   "expectedPackageFiles": [
@@ -26,8 +26,6 @@
     "/Users/jovanyrobledo/.nuget/packages/harfbuzzsharp.nativeassets.macos/7.3.0/harfbuzzsharp.nativeassets.macos.7.3.0.nupkg.sha512",
     "/Users/jovanyrobledo/.nuget/packages/harfbuzzsharp.nativeassets.webassembly/7.3.0/harfbuzzsharp.nativeassets.webassembly.7.3.0.nupkg.sha512",
     "/Users/jovanyrobledo/.nuget/packages/harfbuzzsharp.nativeassets.win32/7.3.0/harfbuzzsharp.nativeassets.win32.7.3.0.nupkg.sha512",
-    "/Users/jovanyrobledo/.nuget/packages/libvlcsharp/3.8.2/libvlcsharp.3.8.2.nupkg.sha512",
-    "/Users/jovanyrobledo/.nuget/packages/libvlcsharp.avalonia/3.8.2/libvlcsharp.avalonia.3.8.2.nupkg.sha512",
     "/Users/jovanyrobledo/.nuget/packages/microcom.runtime/0.11.0/microcom.runtime.0.11.0.nupkg.sha512",
     "/Users/jovanyrobledo/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0/microsoft.codeanalysis.analyzers.3.0.0.nupkg.sha512",
     "/Users/jovanyrobledo/.nuget/packages/microsoft.codeanalysis.common/3.8.0/microsoft.codeanalysis.common.3.8.0.nupkg.sha512",
@@ -38,7 +36,6 @@
     "/Users/jovanyrobledo/.nuget/packages/microsoft.netcore.platforms/2.1.2/microsoft.netcore.platforms.2.1.2.nupkg.sha512",
     "/Users/jovanyrobledo/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "/Users/jovanyrobledo/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
-    "/Users/jovanyrobledo/.nuget/packages/runtime.native.system/4.3.0/runtime.native.system.4.3.0.nupkg.sha512",
     "/Users/jovanyrobledo/.nuget/packages/skiasharp/2.88.6/skiasharp.2.88.6.nupkg.sha512",
     "/Users/jovanyrobledo/.nuget/packages/skiasharp.nativeassets.linux/2.88.6/skiasharp.nativeassets.linux.2.88.6.nupkg.sha512",
     "/Users/jovanyrobledo/.nuget/packages/skiasharp.nativeassets.macos/2.88.6/skiasharp.nativeassets.macos.2.88.6.nupkg.sha512",
@@ -72,14 +69,12 @@
     "/Users/jovanyrobledo/.nuget/packages/system.runtime.extensions/4.3.0/system.runtime.extensions.4.3.0.nupkg.sha512",
     "/Users/jovanyrobledo/.nuget/packages/system.runtime.handles/4.3.0/system.runtime.handles.4.3.0.nupkg.sha512",
     "/Users/jovanyrobledo/.nuget/packages/system.runtime.interopservices/4.3.0/system.runtime.interopservices.4.3.0.nupkg.sha512",
-    "/Users/jovanyrobledo/.nuget/packages/system.runtime.interopservices.runtimeinformation/4.3.0/system.runtime.interopservices.runtimeinformation.4.3.0.nupkg.sha512",
     "/Users/jovanyrobledo/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
     "/Users/jovanyrobledo/.nuget/packages/system.text.encoding.codepages/4.5.1/system.text.encoding.codepages.4.5.1.nupkg.sha512",
     "/Users/jovanyrobledo/.nuget/packages/system.threading/4.3.0/system.threading.4.3.0.nupkg.sha512",
     "/Users/jovanyrobledo/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512",
     "/Users/jovanyrobledo/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "/Users/jovanyrobledo/.nuget/packages/tmds.dbus.protocol/0.15.0/tmds.dbus.protocol.0.15.0.nupkg.sha512",
-    "/Users/jovanyrobledo/.nuget/packages/videolan.libvlc.windows/3.0.20/videolan.libvlc.windows.3.0.20.nupkg.sha512"
+    "/Users/jovanyrobledo/.nuget/packages/tmds.dbus.protocol/0.15.0/tmds.dbus.protocol.0.15.0.nupkg.sha512"
   ],
   "logs": []
 }

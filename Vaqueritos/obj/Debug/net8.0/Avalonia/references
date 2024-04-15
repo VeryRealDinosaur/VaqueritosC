@@ -23,8 +23,12 @@
 /Users/jovanyrobledo/.nuget/packages/avalonia.x11/11.0.6/lib/net6.0/Avalonia.X11.dll
 /Users/jovanyrobledo/.nuget/packages/avalonia_gif/1.0.0/lib/net6.0/AvaloniaGif.dll
 /Users/jovanyrobledo/.nuget/packages/harfbuzzsharp/7.3.0/lib/net6.0/HarfBuzzSharp.dll
-/Users/jovanyrobledo/.nuget/packages/libvlcsharp.avalonia/3.8.2/lib/netstandard2.0/LibVLCSharp.Avalonia.dll
-/Users/jovanyrobledo/.nuget/packages/libvlcsharp/3.8.2/lib/net6.0/LibVLCSharp.dll
+/Users/jovanyrobledo/.nuget/packages/jetbrains.annotations/2022.3.1/lib/netstandard2.0/JetBrains.Annotations.dll
+/Users/jovanyrobledo/.nuget/packages/managedbass/3.1.1/lib/netstandard1.4/ManagedBass.dll
+/Users/jovanyrobledo/.nuget/packages/managedbass.fx/3.1.1/lib/netstandard1.4/ManagedBass.Fx.dll
+/Users/jovanyrobledo/.nuget/packages/managedbass.mix/3.1.1/lib/netstandard1.4/ManagedBass.Mix.dll
+/Users/jovanyrobledo/.nuget/packages/mediaplayer.avalonia.bass/2.0.0/lib/netstandard2.0/MediaPlayer.Avalonia.Bass.dll
+/Users/jovanyrobledo/.nuget/packages/mediaplayer.avalonia/2.0.0/lib/netstandard2.0/MediaPlayer.Avalonia.dll
 /Users/jovanyrobledo/.nuget/packages/microcom.runtime/0.11.0/lib/net5.0/MicroCom.Runtime.dll
 /Users/jovanyrobledo/.nuget/packages/microsoft.codeanalysis.csharp/3.8.0/lib/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.dll
 /Users/jovanyrobledo/.nuget/packages/microsoft.codeanalysis.csharp.scripting/3.8.0/lib/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.Scripting.dll
@@ -35,7 +39,7 @@
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.2/ref/net8.0/Microsoft.VisualBasic.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.2/ref/net8.0/Microsoft.Win32.Primitives.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.2/ref/net8.0/Microsoft.Win32.Registry.dll
-/Users/jovanyrobledo/.nuget/packages/microsoft.win32.systemevents/6.0.0/lib/net6.0/Microsoft.Win32.SystemEvents.dll
+/Users/jovanyrobledo/.nuget/packages/microsoft.win32.systemevents/7.0.0/lib/net7.0/Microsoft.Win32.SystemEvents.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.2/ref/net8.0/mscorlib.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.2/ref/net8.0/netstandard.dll
 /Users/jovanyrobledo/.nuget/packages/skiasharp/2.88.6/lib/net6.0/SkiaSharp.dll
@@ -69,7 +73,7 @@
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.2/ref/net8.0/System.Diagnostics.TraceSource.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.2/ref/net8.0/System.Diagnostics.Tracing.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.2/ref/net8.0/System.dll
-/Users/jovanyrobledo/.nuget/packages/system.drawing.common/6.0.0/lib/net6.0/System.Drawing.Common.dll
+/Users/jovanyrobledo/.nuget/packages/system.drawing.common/7.0.0/lib/net7.0/System.Drawing.Common.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.2/ref/net8.0/System.Drawing.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.2/ref/net8.0/System.Drawing.Primitives.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.2/ref/net8.0/System.Dynamic.Runtime.dll
@@ -121,6 +125,7 @@
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.2/ref/net8.0/System.Numerics.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.2/ref/net8.0/System.Numerics.Vectors.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.2/ref/net8.0/System.ObjectModel.dll
+/Users/jovanyrobledo/.nuget/packages/system.reactive/6.0.0/lib/net6.0/System.Reactive.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.2/ref/net8.0/System.Reflection.DispatchProxy.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.2/ref/net8.0/System.Reflection.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.2/ref/net8.0/System.Reflection.Emit.dll
