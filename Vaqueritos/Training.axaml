@@ -6,50 +6,79 @@
         x:Class="Vaqueritos.Training"
         Title="Game">
     
-    <Grid>
-        <avaloniaGif:GifImage Grid.Row="0" x:Name="Bala" HorizontalAlignment="Center" VerticalAlignment="Center" AutoStart="False" ZIndex="2" Opacity="0"
-                              SourceUri="{Binding Source=avares://Vaqueritos/Assets/BalaFInal.gif, Mode=OneWay}"/>
+    <Grid RowDefinitions="Auto,Auto">
         
-        <Label x:Name="balas" Content="h" FontSize="40" ZIndex="1" Height="50"></Label>
-    
-    <Grid RowDefinitions="Auto,*" Grid.Row="0">
         
-        <Grid Grid.Row="0" RowDefinitions="Auto" ZIndex="1">
+        <avaloniaGif:GifImage Grid.Row="1" x:Name="Lose" HorizontalAlignment="Center" VerticalAlignment="Center" AutoStart="False" ZIndex="1" Opacity="1"
+                              SourceUri="{Binding Source=avares://Vaqueritos/Assets/Final malo.gif, Mode=OneWay}"/>
+
+        <avaloniaGif:GifImage Grid.Row="1" x:Name="Win" HorizontalAlignment="Center" VerticalAlignment="Center" AutoStart="False" ZIndex="1" Opacity="1"
+                              SourceUri="{Binding Source=avares://Vaqueritos/Assets/bola rodante.gif, Mode=OneWay}"/>
+        
+        <avaloniaGif:GifImage Grid.Row="1" x:Name="Bola" HorizontalAlignment="Center" VerticalAlignment="Center" AutoStart="False" ZIndex="3" Opacity="0"
+                              SourceUri="{Binding Source=avares://Vaqueritos/Assets/bola rodante.gif, Mode=OneWay}"/>
+        
+        <Button Grid.Row="1" x:Name="Start" ZIndex="3" Content="Next" Background="Orange" BorderBrush="DarkOrange" BorderThickness="5" Margin="50" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="Start_OnClick"/>
+        <Image x:Name="Wanted" Source="/Assets/image_fx_wantedposter_pixelart.jpg" Grid.Row="1" ZIndex="2"/>
+        
+        <Grid x:Name="All" RowDefinitions="Auto" Grid.Row="1" ZIndex="1">
+        
+        <Grid Grid.Row="0" ZIndex="1">
             
-            <Label Grid.Row="0" x:Name="RemainingTime" Background="Brown" VerticalAlignment="Top" Margin="25" Height="15" CornerRadius="50" ZIndex="1" Width="450" HorizontalAlignment="Left"/>
-            <Label Grid.Row="0" Background="Yellow" VerticalAlignment="Top" Margin="25" Height="15" CornerRadius="50"/>
+            <avaloniaGif:GifImage Grid.Row="0" x:Name="Revolver" HorizontalAlignment="Right" VerticalAlignment="Top" AutoStart="False" ZIndex="3" Opacity="1" Margin="60"
+                                  SourceUri="{Binding Source=avares://Vaqueritos/Assets/T0.gif, Mode=OneWay}"/>
+            
+            <avaloniaGif:GifImage Grid.Row="0" x:Name="MiniBala" HorizontalAlignment="Left" VerticalAlignment="Center" AutoStart="False" ZIndex="2" Opacity="0" Margin="0"
+                                  SourceUri="{Binding Source=avares://Vaqueritos/Assets/Minibala.gif, Mode=OneWay}"/>
+            
+            <avaloniaGif:GifImage Grid.Row="0" x:Name="Bala" HorizontalAlignment="Center" VerticalAlignment="Center" AutoStart="False" ZIndex="2" Opacity="0"
+                                  SourceUri="{Binding Source=avares://Vaqueritos/Assets/BalaFInal.gif, Mode=OneWay}"/>
+            
+            <avaloniaGif:GifImage Grid.Row="0" x:Name="MiniShoot" HorizontalAlignment="Left" VerticalAlignment="Center" AutoStart="False" ZIndex="2" Opacity="0" Margin="0"
+                                  SourceUri="{Binding Source=avares://Vaqueritos/Assets/MiniShot.gif, Mode=OneWay}"/>
+            
+            <avaloniaGif:GifImage Grid.Row="0" x:Name="Shoot" HorizontalAlignment="Center" VerticalAlignment="Center" AutoStart="False" ZIndex="2" Opacity="0"
+                                  SourceUri="{Binding Source=avares://Vaqueritos/Assets/ShootFinal.gif, Mode=OneWay}"/>
+            
+            <Label x:Name="balas" Content="" FontSize="40" ZIndex="1" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Transparent"></Label>
         </Grid>
         
-        <Grid Grid.Row="0" RowDefinitions="Auto,Auto" ZIndex="1" VerticalAlignment="Bottom" Margin="0,0,0,50">
+        <Grid RowDefinitions="Auto,*" Grid.Row="0" ZIndex="0">
             
-            <Grid Grid.Row="0" ColumnDefinitions="Auto, *" ZIndex="0"
-                  VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Image Grid.Column="1" Source="Assets/MainCharacter.png" Width="286" />
-                <Image Grid.Column="0" Source="Assets/Antagonist2.png" Width="161"/>
+            <Grid Grid.Row="0" RowDefinitions="Auto" ZIndex="2">
+                <avaloniaGif:GifImage Grid.Row="0" x:Name="Barra" HorizontalAlignment="Center" VerticalAlignment="Top" AutoStart="False" ZIndex="0"  Opacity="1"
+                                      SourceUri="{Binding Source=avares://Vaqueritos/Assets/BarraDeCarga.gif, Mode=OneWay}" />
             </Grid>
             
-            <Grid Grid.Row="1">
-                <Grid RowDefinitions="Auto">
-                    <Grid Grid.Row="0" ZIndex="1" ColumnDefinitions="Auto, Auto, Auto" HorizontalAlignment="Center">
-                        <Button Grid.Column="0" x:Name="Recargar" Content="Recargar" HorizontalContentAlignment="Center" Margin="25" Width="90" Background="#fff1f1f1" FontSize="15" Click="Recargar_OnClick" Foreground="Black" />
-                        <Button Grid.Column="1" x:Name="Escudo" Content="Escudo" HorizontalContentAlignment="Center" Margin="25" Width="90" Background="#fff1f1f1" FontSize="15" Click="Escudo_OnClick" Foreground="Black" />
-                        <Button Grid.Column="2" x:Name="Disparar" Content="Disparar" HorizontalContentAlignment="Center" Margin="25" Width="90" Background="#fff1f1f1" FontSize="15" Click="Disparar_OnClick" Foreground="Black" />
-                    </Grid>
-                    
-                    <Label Grid.Row="0" Background="#fff1f1f1" BorderBrush="#ffcbcbcb" BorderThickness="10" Height="75"
-                       VerticalAlignment="Center" Width="450" Margin="0"/>
+            <Grid Grid.Row="0" RowDefinitions="Auto,Auto" ZIndex="1" VerticalAlignment="Bottom" Margin="0,0,0,50">
                 
+                <Grid Grid.Row="0" ColumnDefinitions="Auto, *" ZIndex="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image Grid.Column="1" Source="Assets/MainCharacter.png" Width="286" />
+                    <Image Grid.Column="0" Source="Assets/Antagonist2.png" Width="161"/>
                 </Grid>
+                
+                <Grid Grid.Row="1">
+                    <Grid RowDefinitions="Auto">
+                        <Grid Grid.Row="0" ZIndex="1" ColumnDefinitions="Auto, Auto, Auto" HorizontalAlignment="Center">
+                            <Button Grid.Column="0" x:Name="Recargar" Content="Recargar" HorizontalContentAlignment="Center" Margin="25" Width="90" Background="#fff1f1f1" FontSize="15" Click="Recargar_OnClick" Foreground="Black" />
+                            <Button Grid.Column="1" x:Name="Escudo" Content="Escudo" HorizontalContentAlignment="Center" Margin="25" Width="90" Background="#fff1f1f1" FontSize="15" Click="Escudo_OnClick" Foreground="Black" />
+                            <Button Grid.Column="2" x:Name="Disparar" Content="Disparar" HorizontalContentAlignment="Center" Margin="25" Width="90" Background="#fff1f1f1" FontSize="15" Click="Disparar_OnClick" Foreground="Black" />
+                        </Grid>
+                        
+                        <Label Grid.Row="0" Background="#fff1f1f1" BorderBrush="#ffcbcbcb" BorderThickness="10" Height="75"
+                               VerticalAlignment="Center" Width="450" Margin="0"/>
+                    </Grid>
+                </Grid>
+                
             </Grid>
             
-            
-        </Grid>
-        
-        <Grid Grid.Row="0" RowDefinitions="Auto, Auto, *" ZIndex="0">
-            <Label Grid.Row="0" Background="White" Opacity="150" ZIndex="1"/>
+            <Grid Grid.Row="0" RowDefinitions="Auto, Auto, *" ZIndex="0">
+                <Label Grid.Row="0" Background="White" Opacity="150" ZIndex="1"/>
                 <Image Grid.Row="0" Source="Assets/BG1.jpg" ZIndex="0"/>
+            </Grid>
+            
+            </Grid>
         </Grid>
         
     </Grid>
-        </Grid>
 </Window>

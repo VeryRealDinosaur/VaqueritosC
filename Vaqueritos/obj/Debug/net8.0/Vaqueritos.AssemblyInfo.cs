@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Vaqueritos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ed391b0ad1404aee3f7f4f8fcaa9731cfe5dafa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925faf7c8e65163b2c90177df8f6493479007ee3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Vaqueritos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Vaqueritos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -10,6 +10,7 @@ using Avalonia.Interactivity;
 using AvaloniaGif;
 using System.Timers;
 using Avalonia.Media;
+using Avalonia.Threading;
 
 
 namespace Vaqueritos
@@ -31,11 +32,19 @@ namespace Vaqueritos
             Disparar = this.FindControl<Button>("Disparar");
             Bala = this.FindControl<GifImage>("Bala");
             balas = this.FindControl<Label>("balas");
+            Barra = this.FindControl<GifImage>("Barra");
+            Shoot = this.FindControl<GifImage>("Shoot");
+            Bola = this.FindControl<GifImage>("Bola");
+            Start = this.FindControl<Button>("Start");
+            Wanted = this.FindControl<Image>("Wanted");
+            All = this.FindControl<Grid>("All");
+            Revolver = this.FindControl<GifImage>("Revolver");
+            Lose = this.FindControl<GifImage>("Lose");
+            Win = this.FindControl<GifImage>("Win");
+            MiniBala = this.FindControl<GifImage>("MiniBala");
+            MiniShoot = this.FindControl<GifImage>("MiniShoot");
+
         }
-        
-        
-        
-        
         
         static int MakeRandomSelection(double[][][] randomModel, int turn)
         {
@@ -117,18 +126,102 @@ namespace Vaqueritos
             timer.AutoReset = false;
             timer.Elapsed += (sender, e) => Bala.Stop();
         }
+        
+        void MiniBalaAnimation()
+        {
+            Timer timer = new Timer();
+            MiniBala.Opacity = 1;
+            MiniBala.Start();
+            timer.Start();
+            timer.Interval = 500;
+            timer.AutoReset = false;
+            timer.Elapsed += (sender, e) => MiniBala.Stop();
+        }
+        
+        void ShootAnimation()
+        {
+            Timer timer = new Timer();
+            Shoot.Opacity = 1;
+            Shoot.Start();
+            timer.Start();
+            timer.Interval = 500;
+            timer.AutoReset = false;
+            timer.Elapsed += (sender, e) =>
+            {
+                Shoot.Stop();
+                Shoot.Opacity = 0;
+            };
+        }
+        
+        void MiniShootAnimation()
+        {
+            Timer timer = new Timer();
+            MiniShoot.Opacity = 1;
+            MiniShoot.Start();
+            timer.Start();
+            timer.Interval = 500;
+            timer.AutoReset = false;
+            timer.Elapsed += (sender, e) =>
+            {
+                MiniShoot.Stop();
+                MiniShoot.Opacity = 0;
+            };
+        }
+        
+        void BolaAnimation()
+        {
+            Bola.Start();
+            Wanted.ZIndex = 0;
+            Start.ZIndex = 0;
+            Timer timer = new Timer();
+            Bola.Opacity = 1;
+            timer.Start();
+            timer.Interval = 4000;
+            timer.AutoReset = false;
+            timer.Elapsed += (sender, e) => Bola.Stop();
+        }
+        
+        void RevolverAnimation()
+        {
+            Timer timer = new Timer();
+            Revolver.Start();
+            Revolver.InvalidateArrange();
+            timer.Interval = 1000;
+            timer.AutoReset = false;
+            timer.Elapsed += (sender, e) => 
+            {
+                // Marshal the call back to the UI thread
+                Dispatcher.UIThread.InvokeAsync(() =>
+                {
+                    Revolver.Stop();
+                    Revolver.InvalidateArrange();
+                });
+            };
+            timer.Start();
+        }
+        
+        void Back()
+        {
+            Timer timer = new Timer();
+            timer.Interval = 4000;
+            timer.AutoReset = false;
+            timer.Elapsed += (sender, e) =>
+            {
+                // Marshal the call back to the UI thread
+                Dispatcher.UIThread.InvokeAsync(() =>
+                {
+                    All.ZIndex = 4;
+                    All.InvalidateArrange();
+                });
+            };
+            timer.Start();
+        }
+        
+        
 
         bool Acciones(int PlayerAction)
         {
-            if (!playerProtected && hasBotShot)
-            {
-                hasBotWon = true;
-            }
-            else if (!botProtected && hasPlayerShot)
-            {
-                hasPlayerWon = true;
-            }
-            else if (!hasBotWon || !hasPlayerWon)
+            if (!hasBotWon || !hasPlayerWon)
             {
                 Comprobacion();
                 switch (PlayerAction)
@@ -137,12 +230,13 @@ namespace Vaqueritos
                         Comprobacion();
                         if (canPlayerRecharge)
                         {
+                            Barra.Stop();
                             playerProtected = false;
                             BalaAnimation();
                             playerMunition++;
                             UpdateRandomModel(randomModel,1,turn);
-                            balas.Content = $"{playerMunition}";
                             canPlayerRecharge = false;
+                            Barra.Start();
                             return true;
                         }
                         else
@@ -150,50 +244,42 @@ namespace Vaqueritos
                             return false;
                         }
 
-                        break;
-
                     case 2: // Escudo
+                        Barra.Stop();
                         playerProtected = true;
                         UpdateRandomModel(randomModel,2,turn);
+                        Barra.Start();
                         return true;
-                        break;
 
                     case 3: // Disparar
                         Comprobacion();
                         if (canPlayerShoot)
                         {
+                            Barra.Stop();
                             playerProtected = false;
+                            ShootAnimation();
                             hasPlayerShot = true;
-                            UpdateRandomModel(randomModel,3,turn);
                             playerMunition--;
-                            balas.Content = $"{playerMunition}";
+                            UpdateRandomModel(randomModel,3,turn);
+                            Barra.Start();
                             return true;
                         }
                         else
                         {
                             return false;
                         }
-                        break;
                 }
             }
 
             return false;
         }
 
-        void AccionesBot(int BotAction)
+        void AccionesBot(int botAction)
         {
-            if (!botProtected && hasBotShot)
-            {
-                hasBotWon = true;
-            }
-            else if (!playerProtected && hasPlayerShot)
-            {
-                hasPlayerWon = true;
-            }
-            else if (!hasBotWon || !hasPlayerWon)
+            if (!hasBotWon || !hasPlayerWon)
             {
                 Comprobacion();
-                switch (BotAction)
+                switch (botAction)
                 {
                     case 0: // Recargar
                         Comprobacion();
@@ -201,6 +287,11 @@ namespace Vaqueritos
                         {
                             botProtected = false;
                             botMunition++;
+                            if (hasPlayerShot)
+                            {
+                                hasPlayerWon = true;
+                            }
+                            MiniBalaAnimation();
                             canBotRecharge = false;
                         }
                         else
@@ -219,6 +310,11 @@ namespace Vaqueritos
                         {
                             botProtected = false;
                             hasBotShot = true;
+                            if (!playerProtected)
+                            {
+                                hasBotWon = true;
+                            }
+                            MiniShootAnimation();
                             botMunition--;
                         }
                         else
@@ -232,8 +328,7 @@ namespace Vaqueritos
 
         void Comprobacion()
     {
-            
-
+        
             //Can Shoot Player
             canPlayerShoot = playerMunition > 0;
 
@@ -245,6 +340,34 @@ namespace Vaqueritos
         
     }
 
+        void UpdateRevolver()
+        {
+            switch (playerMunition)
+            {
+                case 0:
+                    Revolver.SourceUri = new Uri("avares://Vaqueritos/Assets/T0.gif");
+                    break;
+                case 1: 
+                    Revolver.SourceUri = new Uri("avares://Vaqueritos/Assets/T1.gif");
+                    break;
+                case 2: 
+                    Revolver.SourceUri = new Uri("avares://Vaqueritos/Assets/T2.gif");
+                    break;
+                case 3: 
+                    Revolver.SourceUri = new Uri("avares://Vaqueritos/Assets/T3.gif");
+                    break;
+                case 4: 
+                    Revolver.SourceUri = new Uri("avares://Vaqueritos/Assets/T4.gif");
+                    break;
+                case 5: 
+                    Revolver.SourceUri = new Uri("avares://Vaqueritos/Assets/T5.gif");
+                    break;
+                case 6: 
+                    Revolver.SourceUri = new Uri("avares://Vaqueritos/Assets/T6.gif");
+                    break;
+            }
+        }
+
         private void Recargar_OnClick(object? sender, RoutedEventArgs e)
         {
             Disparar.BorderBrush = default;
@@ -254,17 +377,23 @@ namespace Vaqueritos
             {
                 turn++;
                 debugAction = (MakeRandomSelection(randomModel, turn));
-                balas.Content = debugAction;
                 AccionesBot(debugAction);
                 turn++;
-                Comprobacion();
-                if (hasPlayerWon)
+                UpdateRevolver();
+                RevolverAnimation();
+                if (hasBotWon)
                 {
-                    balas.Content = "has ganado";
+                    Barra.Stop();
+                    Lose.Start();
+                    Lose.ZIndex = 5;
+                    balas.InvalidateVisual();
+                
                 }
-                else if (hasBotWon)
+                else if (hasPlayerWon)
                 {
-                    balas.Content = "Bot ha ganado";
+                    Barra.Stop();
+                    Win.ZIndex = 5;
+                    balas.InvalidateVisual();
                 }
             }
             else Recargar.BorderBrush = Brushes.Red;
@@ -280,17 +409,8 @@ namespace Vaqueritos
             {
                 turn++;
                 debugAction = (MakeRandomSelection(randomModel, turn));
-                balas.Content = debugAction;
                 AccionesBot(debugAction);
                 turn++;
-                if (hasPlayerWon)
-                {
-                    balas.Content = "has ganado";
-                }
-                else if (hasBotWon)
-                {
-                    balas.Content = "Bot ha ganado";
-                }
             }
             else
             {
@@ -308,16 +428,23 @@ namespace Vaqueritos
             {
                 turn++;
                 debugAction = (MakeRandomSelection(randomModel, turn));
-                balas.Content = debugAction;
                 AccionesBot(debugAction);
                 turn++;
-                if (hasPlayerWon)
+                UpdateRevolver();
+                RevolverAnimation();
+                if (hasBotWon)
                 {
-                    balas.Content = "has ganado";
+                    Barra.Stop();
+                    Lose.Start();
+                    Lose.ZIndex = 5;
+                    balas.InvalidateVisual();
+                
                 }
-                else if (hasBotWon)
+                else if (hasPlayerWon)
                 {
-                    balas.Content = "Bot ha ganado";
+                    Barra.Stop();
+                    Win.ZIndex = 5;
+                    balas.InvalidateVisual();
                 }
             }
             else
@@ -325,6 +452,12 @@ namespace Vaqueritos
                 Disparar.BorderBrush = Brushes.Red;
             }
                 
+        }
+
+        private void Start_OnClick(object? sender, RoutedEventArgs e)
+        {
+            Back();
+            BolaAnimation();
         }
     }
 }

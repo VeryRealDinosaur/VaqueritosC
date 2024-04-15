@@ -17,6 +17,9 @@
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.6"/>
         <PackageReference Include="Avalonia_Gif" Version="1.0.0" />
+        <PackageReference Include="LibVLCSharp" Version="3.8.2" />
+        <PackageReference Include="LibVLCSharp.Avalonia" Version="3.8.2" />
+        <PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.20" />
     </ItemGroup>
 
 
@@ -43,6 +46,57 @@
       <AvaloniaResource Include="Assets\Fonts\Pixel-Western.ttf" />
       <None Remove="Assets\image_fx_pixelart_pole_with_4_signs_wild_west_backgro.jpg" />
       <AvaloniaResource Include="Assets\image_fx_pixelart_pole_with_4_signs_wild_west_backgro.jpg" />
+      <None Remove="Assets\Music\Music.mp3" />
+      <AvaloniaResource Include="Assets\Music\Music.mp3" />
+      <None Remove="Assets\barra de carga.gif" />
+      <AvaloniaResource Include="Assets\barra de carga.gif" />
+      <None Remove="Assets\bola rodante.gif" />
+      <AvaloniaResource Include="Assets\bola rodante.gif" />
+      <None Remove="Assets\Shot new).gif" />
+      <AvaloniaResource Include="Assets\Shot new).gif" />
+      <None Remove="Assets\barra de carga-2.gif" />
+      <AvaloniaResource Include="Assets\barra de carga-2.gif" />
+      <None Remove="Assets\bola rodante-2.gif" />
+      <AvaloniaResource Include="Assets\bola rodante-2.gif" />
+      <None Remove="Assets\BarraDeCarga.gif" />
+      <AvaloniaResource Include="Assets\BarraDeCarga.gif" />
+      <None Remove="Assets\Bola.gif" />
+      <AvaloniaResource Include="Assets\Bola.gif" />
+      <None Remove="Assets\ShootFinal.gif" />
+      <AvaloniaResource Include="Assets\ShootFinal.gif" />
+      <None Remove="Assets\bola rodanteB.gif" />
+      <AvaloniaResource Include="Assets\bola rodanteB.gif" />
+      <None Remove="Assets\image_fx_wantedposter_pixelart.jpg" />
+      <AvaloniaResource Include="Assets\image_fx_wantedposter_pixelart.jpg" />
+      <None Remove="Assets\Tambor de revolver .1b.anim.gif" />
+      <None Remove="Assets\Tambor de revolver .2b.anim.gif" />
+      <None Remove="Assets\Tambor de revolver .3b.anim.gif" />
+      <None Remove="Assets\Tambor de revolver .4b.anim.gif" />
+      <None Remove="Assets\Tambor de revolver .5b.anim.gif" />
+      <None Remove="Assets\Tambor de revolver .6b.anim.gif" />
+      <None Remove="Assets\Tambor de revolver .vacio.anim.gif" />
+      <None Remove="Assets\Final malo.gif" />
+      <AvaloniaResource Include="Assets\Final malo.gif" />
+      <None Remove="Assets\Tambor de revolver .1b.anim.gif.gif" />
+      <AvaloniaResource Include="Assets\T1.gif" />
+      <None Remove="Assets\Tambor de revolver .2b.anim.gif.gif" />
+      <None Remove="Assets\Tambor de revolver .vacio.png" />
+      <None Remove="Assets\T0.gif" />
+      <AvaloniaResource Include="Assets\T0.gif" />
+      <None Remove="Assets\T2.gif" />
+      <AvaloniaResource Include="Assets\T2.gif" />
+      <None Remove="Assets\T3.gif" />
+      <AvaloniaResource Include="Assets\T3.gif" />
+      <None Remove="Assets\T4.gif" />
+      <AvaloniaResource Include="Assets\T4.gif" />
+      <None Remove="Assets\T5.gif" />
+      <AvaloniaResource Include="Assets\T5.gif" />
+      <None Remove="Assets\T6.gif" />
+      <AvaloniaResource Include="Assets\T6.gif" />
+      <None Remove="Assets\Minibala.gif" />
+      <AvaloniaResource Include="Assets\Minibala.gif" />
+      <None Remove="Assets\MiniShot.gif" />
+      <AvaloniaResource Include="Assets\MiniShot.gif" />
     </ItemGroup>
 
 

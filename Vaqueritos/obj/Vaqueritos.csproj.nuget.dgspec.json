@@ -61,6 +61,18 @@
             "Avalonia_Gif": {
               "target": "Package",
               "version": "[1.0.0, )"
+            },
+            "LibVLCSharp": {
+              "target": "Package",
+              "version": "[3.8.2, )"
+            },
+            "LibVLCSharp.Avalonia": {
+              "target": "Package",
+              "version": "[3.8.2, )"
+            },
+            "VideoLAN.LibVLC.Windows": {
+              "target": "Package",
+              "version": "[3.0.20, )"
             }
           },
           "imports": [

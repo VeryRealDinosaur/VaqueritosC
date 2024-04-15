@@ -1,11 +1,15 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:avaloniaGif="clr-namespace:AvaloniaGif;assembly=AvaloniaGif"
         Width="500"
         Height="500"
         x:Class="Vaqueritos.MainMenu"
         Title="Vaqueritos">
         
         <Grid RowDefinitions="Auto, Auto, *">
+                
+                <avaloniaGif:GifImage Grid.Row="0" x:Name="Barra" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" AutoStart="True" ZIndex="1"  Opacity="1"
+                                      SourceUri="{Binding Source=avares://Vaqueritos/Assets/Bola.gif, Mode=OneWay}" />
                 
                 <Grid RowDefinitions="Auto,Auto,Auto" Grid.Row="0" ZIndex="1">
                         <Button Grid.Row="0" Content="Jugar" Height="40" Width="100" Click="Button_OnClick" FontFamily="WildWest" Background="Transparent" Foreground="White" FontSize="27" HorizontalContentAlignment="Center" Margin="190,60,0,0"/>
